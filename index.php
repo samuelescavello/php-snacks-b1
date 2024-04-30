@@ -57,6 +57,17 @@ $partite = [
       $age = $_GET['age'];
         if (empty($nome) || empty($email) || empty($age)) {
             echo 'Riempi tutti i campi ';
+        }else if(strlen($nome) < 3 || !strpos($email,'@') || !strpos($email,'.') || is_numeric($age)){
+            echo 'accesso negato';
+        }else{
+            echo 'accesso approvato';
+        }
+    ?>
+</body>
+</html>
+
+<!-- if (empty($nome) || empty($email) || empty($age)) {
+            echo 'Riempi tutti i campi ';
         }else{
            if(strlen($nome) < 3){
             echo 'Il nome deve avere almeno 3 caratteri ';
@@ -71,7 +82,4 @@ $partite = [
         }else{
             echo "il valore non è un numero ";
         }
-        }
-    ?>
-</body>
-</html>
+        } -->
