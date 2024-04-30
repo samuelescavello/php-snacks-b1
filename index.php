@@ -52,12 +52,10 @@ $partite = [
         <input type="reset">
     </form>
     <?php
-      $nome = $_GET['nome'];  
-      $email = $_GET['email'];
-      $age = $_GET['age'];
-        if (empty($nome) || empty($email) || empty($age)) {
+
+        if (empty($_GET['nome']) || empty($_GET['email']) || empty($_GET['age'])) {
             echo 'Riempi tutti i campi ';
-        }else if(strlen($nome) < 3 || !strpos($email,'@') || !strpos($email,'.') || is_numeric($age)){
+        }else if(strlen($_GET['nome']) < 3 || !strpos($_GET['email'],'@') || !strpos(($_GET['email']),'.') || !is_numeric($_GET['age'])){
             echo 'accesso negato';
         }else{
             echo 'accesso approvato';
@@ -65,21 +63,3 @@ $partite = [
     ?>
 </body>
 </html>
-
-<!-- if (empty($nome) || empty($email) || empty($age)) {
-            echo 'Riempi tutti i campi ';
-        }else{
-           if(strlen($nome) < 3){
-            echo 'Il nome deve avere almeno 3 caratteri ';
-           }else{
-            echo 'Benvenuto ' ;
-           }if(!strpos($email,'@') || !strpos($email,'.')){
-            echo 'Email non valida ';
-        }else{
-            echo 'Email valida ';
-        } if(is_numeric($age)){
-            echo "il valore é un numero ";
-        }else{
-            echo "il valore non è un numero ";
-        }
-        } -->
